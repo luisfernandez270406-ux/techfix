@@ -190,3 +190,101 @@ nav a:hover{
 
     line-height:1.5;
 }
+
+.trabajos{
+    padding:80px 100px;
+    background:white;
+}
+.galeria{
+    display:grid;
+
+    grid-template-columns:repeat(2,1fr);
+
+    gap:30px;
+}
+.trabajo{
+    position:relative;
+
+    overflow:hidden;
+
+    box-shadow:0 5px 15px rgba(0,0,0,.1);
+}
+.trabajo img{
+    width:100%;
+
+    height:300px;
+
+    object-fit:cover;
+
+    transition:.4s;
+}
+.trabajo:hover img{
+    transform:scale(1.05);
+}
+.info-trabajo{
+    background:white;
+
+    padding:20px;
+}
+
+.info-trabajo h3{
+    color:#222;
+}
+.contacto{
+    padding:80px 100px;
+    background:#f8f8f8;
+}
+.contacto form{
+    max-width:700px;
+    margin:auto;
+
+    display:flex;
+    flex-direction:column;
+    gap:20px;
+}
+.contacto input,
+.contacto textarea{
+
+    padding:15px;
+
+    border:1px solid #ccc;
+
+    font-size:16px;
+}
+.contacto button{
+
+    background:#00AEEF;
+
+    color:white;
+
+    border:none;
+
+    padding:15px;
+
+    cursor:pointer;
+
+    transition:.3s;
+}
+.contacto button:hover{
+    opacity:.9;
+}
+footer{
+    background:#0B1F33;
+
+    color:white;
+
+    text-align:center;
+
+    padding:40px 20px;
+}
+
+.footer-contenido h3{
+    color:#00AEEF;
+
+    margin-bottom:15px;
+}
+
+.footer-contenido p{
+    margin:10px 0;
+}
+
