@@ -20,6 +20,14 @@ header{
     padding:25px 80px;
 
     background:white;
+
+    position:fixed;
+
+    top:0;
+
+    width:100%;
+
+    z-index:1000;
 }
 
 .logo h1{
@@ -49,6 +57,7 @@ nav a:hover{
 
     display:flex;
     align-items:center;
+    margin-top:90px;
 }
 
 .overlay{
@@ -73,6 +82,8 @@ nav a:hover{
     color:white;
 
     max-width:600px;
+
+    text-shadow:2px 2px 8px rgba(0,0,0,.6);
 }
 
 .hero-contenido h2{
@@ -84,6 +95,7 @@ nav a:hover{
     color:#00AEEF;
     font-size:40px;
     margin-bottom:20px;
+    
 }
 
 .hero-contenido p{
@@ -96,13 +108,17 @@ nav a:hover{
 
     background:#00AEEF;
 
-    color:white;
+    padding:15px 35px;
+
+    border-radius:5px;
 
     text-decoration:none;
 
-    padding:15px 30px;
+    color:white;
 
-    transition:.3s;
+    font-weight:bold;
+
+    transition:0.3s;
 }
 
 .btn:hover{
