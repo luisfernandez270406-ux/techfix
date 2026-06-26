@@ -144,7 +144,7 @@
 
     </div>
 
-    <div class="galeria">
+    <div class="galeria carrusel">
 
         <div class="trabajo">
             <img src="img/trabajos/trabajo1.jpg" alt="Trabajo 1">
@@ -273,6 +273,30 @@ enlaces.forEach(function(link){
     });
 
 });
+
+</script>
+<script>
+
+const trabajos = document.querySelectorAll(".trabajo");
+
+let actual = 0;
+
+setInterval(function(){
+
+    actual++;
+
+    if(actual >= trabajos.length){
+        actual = 0;
+    }
+
+    trabajos.forEach(function(item){
+
+        item.style.transform =
+        `translateX(-${actual * 100}%)`;
+
+    });
+
+},4000);
 
 </script>
 
