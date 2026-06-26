@@ -11,8 +11,11 @@
     <div class="logo">
         <h1>TechFix</h1>
     </div>
+    <div class="menu-toggle" id="menu-toggle">
+        ☰
+    </div>
 
-    <nav>
+    <nav id="menu">
         <a href="#inicio">Inicio</a>
         <a href="#servicios">Servicios</a>
         <a href="#trabajos">Trabajos</a>
@@ -242,6 +245,38 @@
     </div>
 
 </footer>
+<script>
+
+const boton = document.getElementById("menu-toggle");
+const menu = document.getElementById("menu");
+const enlaces = document.querySelectorAll("#menu a");
+
+boton.addEventListener("click", function(){
+
+    menu.classList.toggle("activo");
+
+    if(menu.classList.contains("activo")){
+        boton.innerHTML="✕";
+    }else{
+        boton.innerHTML="☰";
+    }
+
+});
+
+enlaces.forEach(function(link){
+
+    link.addEventListener("click", function(){
+
+        menu.classList.remove("activo");
+        boton.innerHTML="☰";
+
+    });
+
+});
+
+</script>
+
+
     
 </body>
 </html>
