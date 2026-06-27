@@ -80,7 +80,6 @@
             </div>
         </article>
 
-        <!-- Repetimos hasta completar 6 -->
          <!-- Card 3 -->
         <article class="card">
             <img src="img/servicios/optimizacion.jpg" alt="Optimización">
@@ -144,43 +143,114 @@
 
     </div>
 
-    <div class="galeria carrusel">
+    <div class="carrusel">
+        <div class= "galeria">
 
-        <div class="trabajo">
-            <img src="img/trabajos/trabajo1.jpg" alt="Trabajo 1">
+            <div class="trabajo">
+                <img src="img/trabajos/trabajo1.jpg" alt="Trabajo 1">
 
-            <div class="info-trabajo">
-                <h3>Mantenimiento Completo</h3>
+                <div class="info-trabajo">
+                     <h3>Mantenimiento Completo</h3>
+                </div>
             </div>
+
+            <div class="trabajo">
+                 <img src="img/trabajos/trabajo2.jpg" alt="Trabajo 2">
+
+                <div class="info-trabajo">
+                    <h3>Instalación de Software</h3>
+                </div>
+            </div>
+
+            <div class="trabajo">
+                <img src="img/trabajos/trabajo3.png" alt="Trabajo 3">
+
+                <div class="info-trabajo">
+                    <h3>Recuperación de Datos</h3>
+                </div>
+            </div>
+
+            <div class="trabajo">
+                <img src="img/trabajos/trabajo4.jpg" alt="Trabajo 4">
+
+                <div class="info-trabajo">
+                    <h3>Formateo e Instalación de Windows</h3>
+                </div>
+            </div>
+        </div>    
+
+    </div>
+
+</section>
+<section id="faq" class="faq">
+
+    <div class="titulo-seccion">
+        <p>Preguntas Frecuentes</p>
+        <h2>TODO LO QUE NECESITAS SABER</h2>
+    </div>
+
+    <div class="accordion">
+
+        <div class="accordion-item">
+
+            <button class="accordion-header">
+                ¿Cuánto tarda un mantenimiento?
+            </button>
+
+            <div class="accordion-content">
+                <p>
+                    El mantenimiento preventivo suele realizarse entre 1 y 3 horas, dependiendo del estado del equipo.
+                </p>
+            </div>
+
         </div>
 
-        <div class="trabajo">
-            <img src="img/trabajos/trabajo2.jpg" alt="Trabajo 2">
+        <div class="accordion-item">
 
-            <div class="info-trabajo">
-                <h3>Instalación de Software</h3>
+            <button class="accordion-header">
+                ¿Realizan recuperación de datos?
+            </button>
+
+            <div class="accordion-content">
+                <p>
+                    Sí. Evaluamos cada caso y recuperamos archivos siempre que el dispositivo lo permita.
+                </p>
             </div>
+
         </div>
 
-        <div class="trabajo">
-            <img src="img/trabajos/trabajo3.png" alt="Trabajo 3">
+        <div class="accordion-item">
 
-            <div class="info-trabajo">
-                <h3>Recuperación de Datos</h3>
+            <button class="accordion-header">
+                ¿Instalan Windows y programas?
+            </button>
+
+            <div class="accordion-content">
+                <p>
+                    Instalamos Windows, controladores y el software solicitado por el cliente.
+                </p>
             </div>
+
         </div>
 
-        <div class="trabajo">
-            <img src="img/trabajos/trabajo4.jpg" alt="Trabajo 4">
+        <div class="accordion-item">
 
-            <div class="info-trabajo">
-                <h3>Formateo e Instalación de Windows</h3>
+            <button class="accordion-header">
+                ¿Los servicios tienen garantía?
+            </button>
+
+            <div class="accordion-content">
+                <p>
+                    Sí. Todos nuestros servicios cuentan con garantía sobre el trabajo realizado.
+                </p>
             </div>
+
         </div>
 
     </div>
 
 </section>
+
 <section id="contacto" class="contacto">
 
     <div class="titulo-seccion">
@@ -277,29 +347,77 @@ enlaces.forEach(function(link){
 </script>
 <script>
 
-const trabajos = document.querySelectorAll(".trabajo");
+const botonesAcordeon = document.querySelectorAll(".accordion-header");
 
-let actual = 0;
+botonesAcordeon.forEach(function(boton){
 
-setInterval(function(){
+    boton.addEventListener("click", function(){
 
-    actual++;
+        const contenido = boton.nextElementSibling;
 
-    if(actual >= trabajos.length){
-        actual = 0;
-    }
+        // Cierra los demás acordeones
+        botonesAcordeon.forEach(function(otroBoton){
 
-    trabajos.forEach(function(item){
+            if(otroBoton !== boton){
 
-        item.style.transform =
-        `translateX(-${actual * 100}%)`;
+                otroBoton.nextElementSibling.style.maxHeight = null;
+
+            }
+
+        });
+
+        // Abre o cierra el seleccionado
+        if(contenido.style.maxHeight){
+
+            contenido.style.maxHeight = null;
+
+        }else{
+
+            contenido.style.maxHeight = contenido.scrollHeight + "px";
+
+        }
 
     });
 
-},4000);
+});
 
 </script>
+<script>
+const galeria = document.querySelector(".galeria");
+const slides = document.querySelectorAll(".trabajo");
 
+let actual = 0;
+
+function carrusel(){
+
+    if(window.innerWidth > 768){
+
+        galeria.style.transform = "translateX(0)";
+        return;
+    }
+
+    actual++;
+
+    if(actual >= slides.length){
+        actual = 0;
+    }
+
+    galeria.style.transform = `translateX(-${actual * 100}%)`;
+}
+
+setInterval(carrusel,3000);
+
+window.addEventListener("resize",function(){
+
+    if(window.innerWidth > 768){
+
+        galeria.style.transform="translateX(0)";
+        actual=0;
+
+    }
+
+});
+</script>
 
     
 </body>

@@ -48,13 +48,11 @@ nav a:hover{
 
 .hero{
     position:relative;
-
     height:85vh;
-
     background-image:url("../img/banner.jpg");
     background-size:cover;
     background-position:center;
-
+    background-attachment:fixed;
     display:flex;
     align-items:center;
     margin-top:90px;
@@ -292,6 +290,69 @@ footer{
     font-size:32px;
     cursor:pointer;
 }
+.faq{
+    padding:80px 100px;
+    background:white;
+}
+
+.accordion{
+    max-width:900px;
+    margin:auto;
+}
+
+.accordion-item{
+    margin-bottom:15px;
+    border-radius:8px;
+    overflow:hidden;
+    box-shadow:0 5px 15px rgba(0,0,0,.08);
+}
+
+.accordion-header{
+
+    width:100%;
+
+    background:#0B1F33;
+
+    color:white;
+
+    border:none;
+
+    padding:20px;
+
+    text-align:left;
+
+    font-size:18px;
+
+    cursor:pointer;
+
+    transition:.3s;
+}
+
+.accordion-header:hover{
+    background:#00AEEF;
+}
+
+.accordion-content{
+
+    background:white;
+
+    max-height:0;
+
+    overflow:hidden;
+
+    transition:max-height .4s ease;
+
+}
+
+.accordion-content p{
+
+    padding:20px;
+
+    color:#555;
+
+    line-height:1.6;
+}
+
 
 /* Responsive */
 @media (max-width:768px){
@@ -340,11 +401,7 @@ footer{
     grid-template-columns:1fr;
 
 }
-.galeria{
 
-    grid-template-columns:1fr;
-
-}
 .contacto form{
 
     width:100%;
@@ -366,9 +423,8 @@ nav a{
 .card img{
     height:200px;
 }
-.trabajo img{
-    height:220px;
-}
+
+
 .menu-toggle{
     display:block;
 }
@@ -404,23 +460,35 @@ nav a{
 nav.activo{
     max-height:250px;
 }
+
+.faq{
+
+    padding:50px 20px;
+
+}
+
+.accordion-header{
+
+    font-size:16px;
+
+}
 .carrusel{
-
-    display:flex;
-
+    width:100%;
     overflow:hidden;
-
-    position:relative;
-
 }
-
-.trabajo{
-
-    min-width:100%;
-
+.galeria{
+    display:flex;
     transition:transform .5s ease;
-
 }
+.trabajo{
+    flex:0 0 100%;
+}
+.trabajo img{
+    width:100%;
+    height:300px;
+    object-fit:cover;
+}
+
 
 
 
