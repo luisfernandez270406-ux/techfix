@@ -7,13 +7,18 @@ Sitio web desarrollado para la gestión y promoción de servicios técnicos para
 ## Características
 
 - Landing Page moderna y profesional.
-- Sección de presentación (Inicio).
+- Sección de presentación.
 - Catálogo de servicios.
 - Sección de trabajos realizados.
 - Formulario de contacto.
+- Diseño responsive para dispositivos móviles.
+- Menú hamburguesa responsive.
+- Carrusel automático de trabajos realizados.
+- Efecto Parallax en la sección principal.
+- Acordeón de preguntas frecuentes.
+- Formulario de contacto.
 - Almacenamiento de solicitudes en MySQL.
-- Diseño desarrollado con HTML y CSS.
-- Navegación entre secciones mediante menú superior.
+- Minificación del HTML y CSS mediante Webpack.
 
 ---
 
@@ -27,6 +32,8 @@ Sitio web desarrollado para la gestión y promoción de servicios técnicos para
 - Git
 - GitHub
 - Figma
+- JavaScript
+- Webpack
 
 ---
 
@@ -35,7 +42,7 @@ Sitio web desarrollado para la gestión y promoción de servicios técnicos para
 ```text
 techFix/
 │
-├── index.php
+├── index.html
 ├── conexion.php
 ├── guardar.php
 │
@@ -71,7 +78,8 @@ Antes de ejecutar el proyecto debe tener instalado:
 - Apache
 - MySQL
 - Navegador Web
-- Git (opcional)
+- Git 
+- Node.js y npm
 
 ---
 
@@ -143,6 +151,20 @@ http://localhost/techFix
 ```
 
 ---
+
+### 7. Generar la versión optimizada con Webpack
+Abrir una terminal en la carpeta del proyecto y ejecutar:
+
+```bash
+npm install
+```
+Luego ejecutar:
+
+```bash
+npm run build
+```
+
+Al finalizar, Webpack generará automáticamente una carpeta llamada dist, donde se almacenará la versión optimizada y minificada del proyecto.
 
 ## Funcionamiento
 
