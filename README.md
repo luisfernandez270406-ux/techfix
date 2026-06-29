@@ -46,6 +46,17 @@ techFix/
 │   ├── banner.jpg
 │   ├── servicios/
 │   └── trabajos/
+│ 
+├── dist/
+│   ├── index.html
+│   ├── css/
+│   ├── guardar.php
+│   ├── conexion.php
+│   └── img/
+│
+├── webpack.config.js
+├── package.json
+├── package-lock.json
 │
 └── README.md
 ```
